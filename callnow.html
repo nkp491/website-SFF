@@ -1107,7 +1107,34 @@
         const video = document.getElementById('heroVideo');
         const unmuteBtn = document.getElementById('unmuteBtn');
 
-        unmuteBtn.addEventListener('click', function () {
+        // Try to play unmuted on load
+        function tryUnmutedPlayback() {
+            video.muted = false;
+            video.play().then(() => {
+                // Success! Video is playing with sound
+                unmuteBtn.textContent = '🔊';
+                unmuteBtn.classList.add('unmuted');
+                unmuteBtn.title = 'Click to mute';
+            }).catch(() => {
+                // Browser blocked autoplay with sound, fall back to muted
+                video.muted = true;
+                video.play();
+                unmuteBtn.textContent = '🔇';
+                unmuteBtn.classList.remove('unmuted');
+                unmuteBtn.title = 'Click to unmute';
+            });
+        }
+
+        // Attempt unmuted playback when page loads
+        if (document.readyState === 'complete') {
+            tryUnmutedPlayback();
+        } else {
+            window.addEventListener('load', tryUnmutedPlayback);
+        }
+
+        unmuteBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
             if (video.muted) {
                 video.muted = false;
                 unmuteBtn.textContent = '🔊';
