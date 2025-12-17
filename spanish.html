@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gracias por confiar en nuestros asesores para ayudarte con tus necesidades de Seguro de Vida.">
+    <title>SmartFin Family Solutions - Español</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette - Modern & Professional */
+            --primary: #0066CC;
+            --primary-dark: #004C99;
+            --primary-light: #3399FF;
+            --secondary: #00B4A6;
+            --secondary-dark: #008577;
+            --accent: #6366F1;
+            --dark: #0F172A;
+            --dark-lighter: #1E293B;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #0066CC 0%, #00B4A6 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(0, 102, 204, 0.3);
+
+            /* Spacing */
+            --container-max: 1200px;
+            --section-padding: 100px;
+
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-normal);
+        }
+
+        .navbar-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-300);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a.active {
+            color: var(--white);
+            background: rgba(0, 102, 204, 0.3);
+        }
+
+        .lang-badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 24px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 180, 166, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+            animation: heroGlow 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-5%, -5%) rotate(3deg);
+            }
+        }
+
+        /* Subtle wave pattern */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--gray-50) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Decorative lines */
+        .hero-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-decoration::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 120%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08) 80%, transparent 100%);
+            transform: rotate(-3deg);
+        }
+
+        .hero-decoration::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            left: -10%;
+            width: 120%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.06) 70%, transparent 100%);
+            transform: rotate(2deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            display: block;
+            width: 120px;
+            height: auto;
+            margin: 0 auto 32px;
+            filter: brightness(0) invert(1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 102, 204, 0.2);
+            border: 1px solid rgba(0, 102, 204, 0.3);
+            color: var(--primary-light);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: var(--gray-300);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .trust-icon {
+            font-size: 1.5rem;
+        }
+
+        .phone-alert {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 180, 166, 0.2);
+            border: 1px solid rgba(0, 180, 166, 0.3);
+            color: var(--secondary);
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 32px;
+        }
+
+        .phone-alert-icon {
+            font-size: 1.5rem;
+            animation: ring 1.5s ease-in-out infinite;
+        }
+
+        @keyframes ring {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            10%,
+            30% {
+                transform: rotate(-10deg);
+            }
+
+            20%,
+            40% {
+                transform: rotate(10deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: var(--section-padding) 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--gray-50);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .process-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-100);
+            position: relative;
+            transition: var(--transition-normal);
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -20px;
+            left: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .process-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .process-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .service-card:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md), 0 0 0 4px rgba(0, 102, 204, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .service-content h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .service-content p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.2) 0%, transparent 60%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-emoji {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            color: var(--gray-600);
+        }
+
+        .footer-copy {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .process-card {
+                padding: 32px 24px;
+            }
+
+            .phone-alert {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="SmartFin Logo"></div>
+                <span>SmartFin Family Solutions</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><span class="lang-badge">Español</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-decoration"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="SmartFin Family Solutions" class="hero-logo">
+
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Asesores de Seguros de Confianza
+            </div>
+
+            <h1 class="hero-title">
+                Gracias por confiar en nuestros asesores para ayudarte con tus necesidades de
+                <span>Seguro de Vida</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Estamos aquí para ayudarte a encontrar la mejor protección para ti y tu familia, con un proceso
+                sencillo y sin complicaciones.
+            </p>
+
+            <div class="hero-cta">
+                <div class="trust-indicator">
+                    <span class="trust-icon">🛡️</span>
+                    <span>Sin exámenes médicos</span>
+                </div>
+                <div class="trust-indicator">
+                    <span class="trust-icon">⚡</span>
+                    <span>Proceso rápido</span>
+                </div>
+                <div class="trust-indicator">
+                    <span class="trust-icon">💬</span>
+                    <span>Atención personalizada</span>
+                </div>
+            </div>
+
+            <div class="phone-alert">
+                <span class="phone-alert-icon">📞</span>
+                ¡Mantén tu teléfono cerca! Recibirás un mensaje de texto en unos minutos.
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="section-header">
+            <span class="section-label">Próximos Pasos</span>
+            <h2 class="section-title">Esto es lo que sucede a continuación</h2>
+            <p class="section-description">
+                Nuestro proceso es simple, rápido y diseñado para tu comodidad.
+            </p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-number">1</div>
+                <div class="process-icon">💬</div>
+                <h3 class="process-title">Te Contactamos por Mensaje</h3>
+                <p class="process-description">
+                    Uno de nuestros asesores se comunicará contigo pronto por mensaje de texto. Te enviaremos un
+                    mensaje para coordinar una llamada rápida y repasar tus opciones, además de responder cualquier
+                    duda que tengas.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">2</div>
+                <div class="process-icon">⏱️</div>
+                <h3 class="process-title">Proceso Rápido y Sencillo</h3>
+                <p class="process-description">
+                    Llamada de 10 a 15 minutos. Sin exámenes médicos. Sin formularios largos. Solo algunas preguntas, y
+                    te ayudaremos a encontrar la cobertura adecuada al mejor precio.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">3</div>
+                <div class="process-icon">🤝</div>
+                <h3 class="process-title">Te Acompañamos en Cada Paso</h3>
+                <p class="process-description">
+                    Estamos aquí para hacer todo fácil. Ya sea que solo estés explorando o listo para protegerte, te
+                    guiaremos en todo el proceso.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <div class="section-header">
+            <span class="section-label">Servicios Populares</span>
+            <h2 class="section-title">¿Sobre qué nos contacta la mayoría de las personas?</h2>
+            <p class="section-description">
+                ¡Buena pregunta! La mayoría de las personas que nos contactan están buscando lo siguiente:
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">💰</span>
+                <div class="service-content">
+                    <h3>Mejores Tarifas</h3>
+                    <p>Mejores tarifas para su póliza actual de seguro de vida</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🆕</span>
+                <div class="service-content">
+                    <h3>Nueva Cobertura</h3>
+                    <p>Nueva cobertura porque nunca han tenido una póliza</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">➕</span>
+                <div class="service-content">
+                    <h3>Agregar Cobertura</h3>
+                    <p>Agregar cobertura a lo que ya tienen</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔄</span>
+                <div class="service-content">
+                    <h3>Reemplazar Póliza</h3>
+                    <p>Reemplazar una póliza de trabajo con algo permanente y portátil</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">✅</span>
+                <div class="service-content">
+                    <h3>Sin Exámenes Médicos</h3>
+                    <p>Obtener cobertura sin exámenes médicos ni trámites complicados</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">👨‍👩‍👧‍👦</span>
+                <div class="service-content">
+                    <h3>Protección Familiar</h3>
+                    <p>Asegurarse de que su familia esté protegida con pagos mensuales accesibles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 48px; margin-bottom: 0;">
+            <p class="section-description">
+                <strong>Sea cual sea tu situación, estamos aquí para ayudarte a encontrar la mejor opción.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-content">
+            <div class="cta-emoji">👋</div>
+            <h2 class="cta-title">¡Hablamos pronto!</h2>
+            <p class="cta-subtitle">
+                Nuestro equipo está listo para ayudarte a proteger lo que más importa.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Política de Privacidad</a>
+            <span class="footer-divider">|</span>
+            <a href="terms-conditions.html">Términos y Condiciones</a>
+        </div>
+        <p class="footer-copy">
+            © 2024 SmartFin Family Solutions. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Speak to an advisor immediately. Final Expense Life Insurance - Protect Your Family From Funeral Costs.">
+    <title>SmartFin Family Solutions - Call Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette - Modern & Professional */
+            --primary: #0066CC;
+            --primary-dark: #004C99;
+            --primary-light: #3399FF;
+            --secondary: #00B4A6;
+            --secondary-dark: #008577;
+            --accent: #6366F1;
+            --cta-orange: #FF6B35;
+            --cta-orange-dark: #E55A2B;
+            --dark: #0F172A;
+            --dark-lighter: #1E293B;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #0066CC 0%, #00B4A6 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --gradient-cta: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(0, 102, 204, 0.3);
+            --shadow-cta: 0 8px 30px rgba(255, 107, 53, 0.4);
+
+            /* Spacing */
+            --container-max: 1200px;
+            --section-padding: 80px;
+
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .nav-phone {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-phone:hover {
+            color: var(--cta-orange);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 24px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 180, 166, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+            animation: heroGlow 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-5%, -5%) rotate(3deg);
+            }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--gray-50) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-decoration::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 120%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08) 80%, transparent 100%);
+            transform: rotate(-3deg);
+        }
+
+        .hero-decoration::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            left: -10%;
+            width: 120%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.06) 70%, transparent 100%);
+            transform: rotate(2deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 107, 53, 0.2);
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            color: var(--cta-orange);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            background: var(--gradient-cta);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--gray-300);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .hero-feature-icon {
+            font-size: 1.2rem;
+        }
+
+        /* CTA Buttons */
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-cta);
+            color: var(--white);
+            padding: 20px 48px;
+            border-radius: 16px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-cta);
+            transition: var(--transition-normal);
+            animation: pulse-cta 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-cta {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: var(--shadow-cta);
+            }
+
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 12px 40px rgba(255, 107, 53, 0.5);
+            }
+        }
+
+        .cta-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .cta-primary-icon {
+            font-size: 1.6rem;
+        }
+
+        .cta-divider {
+            color: var(--gray-400);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: var(--section-padding) 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Rising Costs Section */
+        .costs-section {
+            background: var(--gray-50);
+        }
+
+        .costs-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .costs-amount {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        .costs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: left;
+            max-width: 500px;
+            margin: 32px auto 0;
+        }
+
+        .costs-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .costs-item-icon {
+            font-size: 1.5rem;
+        }
+
+        .costs-item-text {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        /* What Is Section */
+        .what-section {
+            background: var(--white);
+        }
+
+        .what-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .what-card {
+            background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .what-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .what-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .what-text {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* Qualify Section */
+        .qualify-section {
+            background: var(--gray-50);
+        }
+
+        .qualify-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .qualify-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition-normal);
+        }
+
+        .qualify-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .qualify-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .qualify-text {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.15) 0%, transparent 60%);
+        }
+
+        .steps-content {
+            position: relative;
+            z-index: 10;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .steps-section .section-title {
+            color: var(--white);
+        }
+
+        .steps-section .section-description {
+            color: var(--gray-300);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-cta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 auto 20px;
+        }
+
+        .step-text {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta-icon {
+            font-size: 5rem;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .final-cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-phone-big {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--gradient-cta);
+            color: var(--white);
+            padding: 24px 56px;
+            border-radius: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-cta);
+            transition: var(--transition-normal);
+        }
+
+        .cta-phone-big:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .cta-website {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+        }
+
+        .cta-website:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            color: var(--gray-600);
+        }
+
+        .footer-copy {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* ===== HERO VIDEO ===== */
+        .hero-video-container {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            margin: 20px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 102, 204, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-video {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+        }
+
+        .video-unmute-btn {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--white);
+            transition: var(--transition-normal);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        .video-unmute-btn:hover {
+            background: rgba(255, 107, 53, 0.8);
+            border-color: var(--cta-orange);
+            transform: scale(1.1);
+        }
+
+        .video-unmute-btn.unmuted {
+            background: rgba(0, 180, 166, 0.8);
+            border-color: var(--secondary);
+        }
+
+        /* ===== FLOATING CALL BUTTON ===== */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 16px 24px;
+            background: var(--gradient-cta);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            z-index: 1000;
+            transition: var(--transition-normal);
+            animation: float-pulse 2s ease-in-out infinite;
+        }
+
+        .floating-call-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.7);
+        }
+
+        @keyframes float-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-video-container {
+                max-width: 100%;
+                margin: 24px auto;
+                border-radius: 16px;
+            }
+
+            .hero-video {
+                border-radius: 14px;
+            }
+
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .cta-primary {
+                padding: 18px 36px;
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .cta-phone-big {
+                padding: 20px 40px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="SmartFin Logo"></div>
+                <span>SmartFin Family Solutions</span>
+            </a>
+            <div class="nav-cta">
+                <a href="tel:1-877-684-4255" class="nav-phone">
+                    📞 1-877-684-4255
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-decoration"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                ⚡ Speak to an Advisor Immediately
+            </div>
+
+            <h1 class="hero-title">
+                <span>Final Expense</span> Life Insurance
+            </h1>
+
+            <p class="hero-subtitle">
+                Protect Your Family From Funeral Costs. Affordable burial & funeral coverage for seniors — no medical
+                exams required.
+            </p>
+
+            <!-- Hero Video -->
+            <a href="tel:1-877-684-4255" class="hero-video-container" style="display: block; cursor: pointer;">
+                <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+                    <source src="advisor-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button id="unmuteBtn" class="video-unmute-btn" title="Click to unmute">
+                    🔇
+                </button>
+            </a>
+
+            <div class="cta-container">
+                <a href="tel:1-877-684-4255" class="cta-primary">
+                    <span class="cta-primary-icon">📞</span>
+                    Call 1-877-684-4255
+                </a>
+                <span class="cta-divider">— or —</span>
+                <a href="https://www.helpcoverage.com" target="_blank" class="cta-secondary">
+                    🌐 Visit www.helpcoverage.com
+                </a>
+            </div>
+
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">✔</span>
+                    <span>Coverage from $5,000 – $50,000</span>
+                </div>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">✔</span>
+                    <span>Designed for fixed income</span>
+                </div>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">✔</span>
+                    <span>Approval by phone in minutes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funeral Costs Are Rising -->
+    <section class="section costs-section">
+        <div class="costs-content">
+            <span class="section-label">The Reality</span>
+            <h2 class="section-title">Funeral Costs Are Rising</h2>
+            <div class="costs-amount">$9,000 – $15,000+</div>
+            <p class="section-description">
+                Most funerals today cost this much. Without coverage, your family may have to:
+            </p>
+            <div class="costs-list">
+                <div class="costs-item">
+                    <span class="costs-item-icon">💳</span>
+                    <span class="costs-item-text">Use savings or credit cards</span>
+                </div>
+                <div class="costs-item">
+                    <span class="costs-item-icon">🙏</span>
+                    <span class="costs-item-text">Start fundraisers</span>
+                </div>
+                <div class="costs-item">
+                    <span class="costs-item-icon">⏰</span>
+                    <span class="costs-item-text">Delay funeral arrangements</span>
+                </div>
+            </div>
+            <p class="section-description" style="margin-top: 32px; font-weight: 600;">
+                Final Expense Insurance ensures your loved ones are protected.
+            </p>
+        </div>
+    </section>
+
+    <!-- What Is Final Expense? -->
+    <section class="section what-section">
+        <div class="section-header">
+            <span class="section-label">About Coverage</span>
+            <h2 class="section-title">What Is Final Expense Insurance?</h2>
+            <p class="section-description">
+                Final Expense (also called burial insurance) gives you peace of mind:
+            </p>
+        </div>
+
+        <div class="what-grid">
+            <div class="what-card">
+                <div class="what-icon">📜</div>
+                <p class="what-text">A small whole life policy</p>
+            </div>
+            <div class="what-card">
+                <div class="what-icon">⚰️</div>
+                <p class="what-text">Covers funeral, burial, cremation & medical bills</p>
+            </div>
+            <div class="what-card">
+                <div class="what-icon">♾️</div>
+                <p class="what-text">Never expires as long as premiums are paid</p>
+            </div>
+            <div class="what-card">
+                <div class="what-icon">💵</div>
+                <p class="what-text">Pays directly to your beneficiary</p>
+            </div>
+        </div>
+
+        <div class="hero-features" style="margin-top: 48px; justify-content: center;">
+            <div class="hero-feature" style="color: var(--primary);">
+                <span class="hero-feature-icon">✔</span>
+                <span>No medical exams</span>
+            </div>
+            <div class="hero-feature" style="color: var(--primary);">
+                <span class="hero-feature-icon">✔</span>
+                <span>Simple health questions</span>
+            </div>
+            <div class="hero-feature" style="color: var(--primary);">
+                <span class="hero-feature-icon">✔</span>
+                <span>Locked-in monthly price</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Qualify -->
+    <section class="section qualify-section">
+        <div class="section-header">
+            <span class="section-label">Eligibility</span>
+            <h2 class="section-title">You May Qualify If You:</h2>
+            <p class="section-description">
+                Many people we help are approved the same day.
+            </p>
+        </div>
+
+        <div class="qualify-grid">
+            <div class="qualify-card">
+                <div class="qualify-icon">👴</div>
+                <p class="qualify-text">Are 40–89 years old</p>
+            </div>
+            <div class="qualify-card">
+                <div class="qualify-icon">💰</div>
+                <p class="qualify-text">Receive Social Security or retirement income</p>
+            </div>
+            <div class="qualify-card">
+                <div class="qualify-icon">📊</div>
+                <p class="qualify-text">Want affordable monthly payments</p>
+            </div>
+            <div class="qualify-card">
+                <div class="qualify-icon">🏥</div>
+                <p class="qualify-text">Prefer no doctor visits or blood work</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Get Covered -->
+    <section class="section steps-section">
+        <div class="steps-content">
+            <div class="section-header">
+                <span class="section-label" style="color: var(--secondary);">Simple Process</span>
+                <h2 class="section-title">How to Get Covered</h2>
+                <p class="section-description">
+                    Get protected in just 4 easy steps.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <p class="step-text">Call our licensed advisors</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <p class="step-text">Answer a few basic questions</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <p class="step-text">Choose your coverage amount</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <p class="step-text">Get approved the same day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+        <div class="final-cta-content">
+            <div class="final-cta-icon">📞</div>
+            <h2 class="final-cta-title">Speak to an Advisor Immediately</h2>
+            <p class="final-cta-subtitle">
+                Our licensed advisors are ready to help you get the coverage you need.
+            </p>
+            <div class="final-cta-buttons">
+                <a href="tel:1-877-684-4255" class="cta-phone-big">
+                    📞 Call 1-877-684-4255
+                </a>
+                <a href="https://www.helpcoverage.com" target="_blank" class="cta-website">
+                    🌐 Visit www.helpcoverage.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Call Button -->
+    <a href="tel:1-877-684-4255" class="floating-call-btn" title="Call Now">
+        📞 Call Now
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="footer-divider">|</span>
+            <a href="terms-conditions.html">Terms and Conditions</a>
+        </div>
+        <p class="footer-copy">
+            © 2024 SmartFin Family Solutions. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Video unmute toggle
+        const video = document.getElementById('heroVideo');
+        const unmuteBtn = document.getElementById('unmuteBtn');
+
+        unmuteBtn.addEventListener('click', function () {
+            if (video.muted) {
+                video.muted = false;
+                unmuteBtn.textContent = '🔊';
+                unmuteBtn.classList.add('unmuted');
+                unmuteBtn.title = 'Click to mute';
+            } else {
+                video.muted = true;
+                unmuteBtn.textContent = '🔇';
+                unmuteBtn.classList.remove('unmuted');
+                unmuteBtn.title = 'Click to unmute';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Terms and Conditions - Terms governing your use of SmartFin Family Solutions services.">
+    <title>SmartFin Family Solutions - Terms and Conditions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #004C99;
+            --primary-light: #3399FF;
+            --secondary: #00B4A6;
+            --dark: #0F172A;
+            --dark-lighter: #1E293B;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #0066CC 0%, #00B4A6 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-max: 900px;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-300);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: var(--gradient-hero);
+            padding: 140px 24px 60px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .terms-intro {
+            background: var(--gray-50);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 40px;
+        }
+
+        .terms-intro p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .terms-section p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .terms-section ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .terms-section li {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .contact-box {
+            background: var(--gray-50);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-box h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .contact-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .agreement-notice {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 180, 166, 0.1) 100%);
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .agreement-notice p {
+            color: var(--gray-700);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            color: var(--gray-600);
+        }
+
+        .footer-copy {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 40px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="SmartFin Logo"></div>
+                <span>SmartFin Family Solutions</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mortgage-protection.html">Mortgage Protection</a></li>
+                <li><a href="final-expense.html">Final Expense</a></li>
+                <li><a href="life-insurance.html">Life Insurance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Terms and Conditions</h1>
+        <p class="hero-subtitle">
+            Terms governing your use of SmartFin Family Solutions services
+        </p>
+    </section>
+
+    <!-- Content -->
+    <main class="content">
+        <div class="terms-intro">
+            <p>
+                These Terms and Conditions ("Terms") govern your use of services provided by SmartFin Family Solutions,
+                including but not limited to communications initiated through Facebook lead forms and other digital
+                channels. By submitting your information through our Facebook lead form, you agree to be bound by these
+                Terms and our Privacy Policy.
+            </p>
+        </div>
+
+        <section class="terms-section">
+            <h2><span class="section-number">1</span> Use of Services</h2>
+            <p>By submitting your contact information, you acknowledge and agree that:</p>
+            <ul>
+                <li>You are requesting information regarding life insurance or related services.</li>
+                <li>A licensed life insurance agent may contact you to discuss available products, options, and
+                    services.</li>
+                <li>Your submission constitutes an inquiry and request for contact.</li>
+            </ul>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">2</span> Consent to Contact</h2>
+            <p>By providing your information and clicking "Submit":</p>
+            <ul>
+                <li>You expressly authorize SmartFin Family Solutions and its licensed agents to contact you via calls,
+                    texts, voicemails, and emails, including through the use of an automatic telephone dialing system.
+                </li>
+                <li>This consent applies even if your phone number is listed on a Do-Not-Call (DNC) registry.</li>
+                <li>Your consent is not a condition of purchase.</li>
+            </ul>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">3</span> Accuracy of Information</h2>
+            <p>
+                You agree that the information you provide is accurate and complete to the best of your knowledge. You
+                are responsible for keeping your contact information up to date.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">4</span> Opt-Out</h2>
+            <p>
+                You may opt out of further communication at any time by replying with "STOP" or "OUT" to any of our
+                messages. Standard message and data rates may apply.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">5</span> No Guarantee of Insurance</h2>
+            <p>
+                Submitting your information does not guarantee coverage, rates, or approval for any life insurance
+                product. All quotes, services, and recommendations are subject to underwriting approval by the
+                respective insurance carriers.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">6</span> Third-Party Services</h2>
+            <p>
+                Our website and forms may contain links to third-party websites or services. We are not responsible for
+                the privacy practices or content of those third parties. Please refer to their respective policies for
+                details.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">7</span> Changes to Terms</h2>
+            <p>
+                SmartFin Family Solutions reserves the right to change or update these Terms at any time. Continued use
+                of our services after such changes constitutes your acceptance of the revised Terms.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">8</span> Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by law, SmartFin Family Solutions shall not be liable for any direct,
+                indirect, incidental, consequential, or punitive damages arising from your use of, or inability to use,
+                our services or the actions of any agent.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">9</span> Governing Law</h2>
+            <p>
+                These Terms shall be governed by and interpreted in accordance with the laws of the State of
+                California, without regard to its conflict of laws principles.
+            </p>
+        </section>
+
+        <section class="terms-section">
+            <h2><span class="section-number">10</span> Contact Us</h2>
+            <p>
+                If you have any questions regarding these Terms or your interactions with us, please contact:
+            </p>
+        </section>
+
+        <div class="contact-box">
+            <h3>SmartFin Family Solutions</h3>
+            <p>We're here to help</p>
+            <p class="contact-phone">1-877-722-7511</p>
+        </div>
+
+        <div class="agreement-notice">
+            <p>
+                By submitting your information, you agree to these Terms and our Privacy Policy. If you do not agree,
+                please do not use our services.
+            </p>
+        </div>
+
+        <p class="last-updated">
+            Last updated: December 2024
+        </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="footer-divider">|</span>
+            <a href="terms-conditions.html">Terms and Conditions</a>
+        </div>
+        <p class="footer-copy">
+            © 2024 SmartFin Family Solutions. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
