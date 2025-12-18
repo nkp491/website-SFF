@@ -7,6 +7,30 @@
     <meta name="description"
         content="Life Insurance - A foundation of financial security ensuring your loved ones are protected from financial hardship.">
     <title>SmartFin Family Solutions - Life Insurance</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1768295254027830');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', {
+            content_name: 'Life Insurance',
+            content_category: 'Insurance Product',
+            content_type: 'product_page'
+        });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1768295254027830&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -945,6 +969,77 @@
             © 2024 SmartFin Family Solutions. All rights reserved.
         </p>
     </footer>
+
+    <!-- Meta Pixel Click Tracking with CAPI -->
+    <script>
+        (function() {
+            function generateEventId() {
+                return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            function getCookie(name) {
+                var value = '; ' + document.cookie;
+                var parts = value.split('; ' + name + '=');
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+
+            function sendToCapiEndpoint(eventName, eventId, customData) {
+                fetch('/api/track', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event_name: eventName,
+                        event_id: eventId,
+                        event_source_url: window.location.href,
+                        action_source: 'website',
+                        custom_data: customData,
+                        user_data: {
+                            fbc: getCookie('_fbc'),
+                            fbp: getCookie('_fbp')
+                        }
+                    })
+                }).catch(function(err) { console.log('CAPI tracking error:', err); });
+            }
+
+            // Track tel: link clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var eventId = generateEventId();
+                    var phoneNumber = this.href.replace('tel:', '');
+
+                    fbq('track', 'Contact', {
+                        content_name: 'Phone Call',
+                        content_category: 'Lead',
+                        value: phoneNumber
+                    }, { eventID: eventId });
+
+                    sendToCapiEndpoint('Contact', eventId, {
+                        content_name: 'Phone Call',
+                        content_category: 'Lead',
+                        value: phoneNumber
+                    });
+                });
+            });
+
+            // Track external link clicks (helpcoverage.com)
+            document.querySelectorAll('a[href*="helpcoverage.com"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var eventId = generateEventId();
+
+                    fbq('track', 'Lead', {
+                        content_name: 'External Website Redirect',
+                        content_category: 'Lead'
+                    }, { eventID: eventId });
+
+                    sendToCapiEndpoint('Lead', eventId, {
+                        content_name: 'External Website Redirect',
+                        content_category: 'Lead'
+                    });
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
