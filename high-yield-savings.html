@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Gracias por confiar en nuestros asesores para ayudarte con tus necesidades de Seguro de Vida.">
-    <title>SmartFin Family Solutions - Español</title>
+        content="High-Yield Savings Plan - A safe, tax-advantaged savings strategy with competitive rates backed by A-rated financial institutions.">
+    <title>SmartFin Family Solutions - High-Yield Savings Plan</title>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -20,6 +20,11 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1768295254027830');
         fbq('track', 'PageView');
+        fbq('track', 'ViewContent', {
+            content_name: 'High-Yield Savings Plan',
+            content_category: 'Financial Product',
+            content_type: 'product_page'
+        });
     </script>
     <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=1768295254027830&ev=PageView&noscript=1"
@@ -183,25 +188,16 @@
             background: rgba(0, 102, 204, 0.3);
         }
 
-        .lang-badge {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
         /* ===== HERO SECTION ===== */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             background: var(--gradient-hero);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 120px 24px 80px;
+            padding: 140px 24px 80px;
         }
 
         .hero::before {
@@ -280,27 +276,6 @@
             max-width: 900px;
         }
 
-        .hero-logo {
-            display: block;
-            width: 120px;
-            height: auto;
-            margin: 0 auto 32px;
-            filter: brightness(0) invert(1);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -316,28 +291,8 @@
             backdrop-filter: blur(10px);
         }
 
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--secondary);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-        }
-
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 800;
             color: var(--white);
             line-height: 1.1;
@@ -353,75 +308,57 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             color: var(--gray-300);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 32px;
             line-height: 1.7;
         }
 
         .hero-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .trust-indicator {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--gray-400);
-            font-size: 0.95rem;
-        }
-
-        .trust-icon {
-            font-size: 1.5rem;
-        }
-
-        .phone-alert {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: rgba(0, 180, 166, 0.2);
-            border: 1px solid rgba(0, 180, 166, 0.3);
-            color: var(--secondary);
-            padding: 16px 24px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 16px 32px;
             border-radius: 12px;
             font-size: 1.1rem;
             font-weight: 600;
-            margin-top: 32px;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
         }
 
-        .phone-alert-icon {
-            font-size: 1.5rem;
-            animation: ring 1.5s ease-in-out infinite;
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
         }
 
-        @keyframes ring {
-
-            0%,
-            100% {
-                transform: rotate(0deg);
-            }
-
-            10%,
-            30% {
-                transform: rotate(-10deg);
-            }
-
-            20%,
-            40% {
-                transform: rotate(10deg);
-            }
-
-            50% {
-                transform: rotate(0deg);
-            }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
-        /* ===== SECTIONS ===== */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--gray-300);
+            font-size: 0.85rem;
+        }
+
+        .trust-badge strong {
+            color: var(--secondary);
+        }
+
+        /* ===== CONTENT SECTIONS ===== */
         .section {
             padding: var(--section-padding) 24px;
         }
@@ -456,12 +393,12 @@
             line-height: 1.7;
         }
 
-        /* Process Section */
-        .process-section {
+        /* What Is Section */
+        .what-section {
             background: var(--gray-50);
         }
 
-        .process-grid {
+        .what-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
@@ -469,113 +406,151 @@
             margin: 0 auto;
         }
 
-        .process-card {
+        .what-card {
             background: var(--white);
             border-radius: 24px;
-            padding: 40px;
+            padding: 48px;
             box-shadow: var(--shadow);
             border: 1px solid var(--gray-100);
-            position: relative;
             transition: var(--transition-normal);
+            text-align: center;
         }
 
-        .process-card:hover {
+        .what-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
 
-        .process-number {
-            position: absolute;
-            top: -20px;
-            left: 32px;
-            width: 48px;
-            height: 48px;
+        .what-icon {
+            width: 80px;
+            height: 80px;
             background: var(--gradient-primary);
-            border-radius: 16px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 2.5rem;
+            margin: 0 auto 24px;
             box-shadow: var(--shadow-md);
         }
 
-        .process-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .process-title {
-            font-size: 1.25rem;
+        .what-title {
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
-        .process-description {
+        .what-description {
+            font-size: 1.05rem;
             color: var(--gray-600);
             line-height: 1.7;
         }
 
-        /* Services Section */
-        .services-section {
+        /* Audience Section */
+        .audience-section {
             background: var(--white);
         }
 
-        .services-grid {
+        .audience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             max-width: var(--container-max);
             margin: 0 auto;
-            justify-content: center;
         }
 
-        .service-card {
+        .audience-card {
             background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
             border: 1px solid var(--gray-200);
             border-radius: 16px;
-            padding: 28px;
+            padding: 32px;
             transition: var(--transition-normal);
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
         }
 
-        .service-card:hover {
+        .audience-card:hover {
             background: var(--white);
             border-color: var(--primary);
             box-shadow: var(--shadow-md), 0 0 0 4px rgba(0, 102, 204, 0.1);
             transform: translateY(-4px);
         }
 
-        .service-icon {
-            font-size: 1.8rem;
-            flex-shrink: 0;
+        .audience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
         }
 
-        .service-content h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
+        .audience-title {
+            font-size: 1.15rem;
+            font-weight: 700;
             color: var(--dark);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .service-content p {
+        .audience-range {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .audience-description {
             color: var(--gray-600);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* CTA Section */
-        .cta-section {
+        /* Features Section */
+        .features-section {
+            background: var(--gray-50);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md), 0 0 0 4px rgba(0, 102, 204, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Steps Section */
+        .steps-section {
             background: var(--gradient-hero);
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
+        .steps-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -583,33 +558,188 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.2) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.2) 0%, transparent 60%);
+                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.15) 0%, transparent 60%);
         }
 
-        .cta-content {
+        .steps-content {
             position: relative;
             z-index: 10;
-            text-align: center;
-            max-width: 700px;
+            max-width: var(--container-max);
             margin: 0 auto;
         }
 
-        .cta-emoji {
+        .steps-section .section-title {
+            color: var(--white);
+        }
+
+        .steps-section .section-description {
+            color: var(--gray-300);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition-normal);
+            text-align: center;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            color: var(--gray-300);
+            line-height: 1.7;
+        }
+
+        .steps-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .steps-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+        }
+
+        .steps-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition-normal);
+        }
+
+        .testimonial-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-stars {
+            color: #FFC107;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-quote {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Why Choose Section */
+        .why-section {
+            background: var(--gray-50);
+        }
+
+        .why-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-icon {
             font-size: 4rem;
             margin-bottom: 24px;
         }
 
-        .cta-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .cta-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray-300);
+        .why-text {
+            font-size: 1.35rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            font-weight: 500;
         }
 
         /* ===== FOOTER ===== */
@@ -814,13 +944,13 @@
                 padding: 60px 20px;
             }
 
-            .process-card {
-                padding: 32px 24px;
+            .what-card {
+                padding: 32px;
             }
 
-            .phone-alert {
+            .hero-badges {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
         }
     </style>
@@ -835,10 +965,13 @@
                 <span>SmartFin Family Solutions</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><span class="lang-badge">Español</span></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mortgage-protection.html">Mortgage Protection</a></li>
+                <li><a href="final-expense.html">Final Expense</a></li>
+                <li><a href="life-insurance.html">Life Insurance</a></li>
+                <li><a href="high-yield-savings.html" class="active">High-Yield Savings</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -849,11 +982,11 @@
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" onclick="toggleMobileMenu()"></div>
     <nav class="mobile-nav">
-        <a href="index.html">Inicio</a>
-        <a href="mortgage-protection.html">Protección Hipotecaria</a>
-        <a href="final-expense.html">Gastos Finales</a>
-        <a href="life-insurance.html">Seguro de Vida</a>
-        <a href="high-yield-savings.html">Ahorros de Alto Rendimiento</a>
+        <a href="index.html">Home</a>
+        <a href="mortgage-protection.html">Mortgage Protection</a>
+        <a href="final-expense.html">Final Expense</a>
+        <a href="life-insurance.html">Life Insurance</a>
+        <a href="high-yield-savings.html" class="active">High-Yield Savings</a>
     </nav>
 
     <script>
@@ -875,163 +1008,226 @@
         <div class="hero-decoration"></div>
 
         <div class="hero-content">
-            <img src="logo.png" alt="SmartFin Family Solutions" class="hero-logo">
-
             <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Asesores de Seguros de Confianza
+                💰 Secure Your Financial Future
             </div>
-
             <h1 class="hero-title">
-                Gracias por confiar en nuestros asesores para ayudarte con tus necesidades de
-                <span>Seguro de Vida</span>
+                <span>High-Yield Savings Plan</span> at a Glance
             </h1>
-
             <p class="hero-subtitle">
-                Estamos aquí para ayudarte a encontrar la mejor protección para ti y tu familia, con un proceso
-                sencillo y sin complicaciones.
+                Discover a safe, tax-advantaged savings strategy that offers competitive returns backed by A-rated financial institutions. The same strategy used by pension funds and Fortune 500 companies is now available to everyday savers.
             </p>
-
-            <div class="hero-cta">
-                <div class="trust-indicator">
-                    <span class="trust-icon">🛡️</span>
-                    <span>Sin exámenes médicos</span>
+            <div class="hero-badges">
+                <div class="trust-badge">
+                    <strong>A+</strong> Rated Institutions
                 </div>
-                <div class="trust-indicator">
-                    <span class="trust-icon">⚡</span>
-                    <span>Proceso rápido</span>
+                <div class="trust-badge">
+                    <strong>$808B+</strong> Assets Managed
                 </div>
-                <div class="trust-indicator">
-                    <span class="trust-icon">💬</span>
-                    <span>Atención personalizada</span>
+                <div class="trust-badge">
+                    <strong>100%</strong> Principal Protection
                 </div>
-            </div>
-
-            <div class="phone-alert">
-                <span class="phone-alert-icon">📞</span>
-                ¡Mantén tu teléfono cerca! Recibirás un mensaje de texto en unos minutos.
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="section process-section">
+    <!-- What Is HYSP -->
+    <section class="section what-section">
         <div class="section-header">
-            <span class="section-label">Próximos Pasos</span>
-            <h2 class="section-title">Esto es lo que sucede a continuación</h2>
+            <span class="section-label">What Is It?</span>
+            <h2 class="section-title">The High-Yield Savings Plan</h2>
             <p class="section-description">
-                Nuestro proceso es simple, rápido y diseñado para tu comodidad.
+                A powerful alternative to traditional savings accounts and CDs that offers better returns with the same level of safety.
             </p>
         </div>
 
-        <div class="process-grid">
-            <div class="process-card">
-                <div class="process-number">1</div>
-                <div class="process-icon">💬</div>
-                <h3 class="process-title">Te Contactamos por Mensaje</h3>
-                <p class="process-description">
-                    Uno de nuestros asesores se comunicará contigo pronto por mensaje de texto. Te enviaremos un
-                    mensaje para coordinar una llamada rápida y repasar tus opciones, además de responder cualquier
-                    duda que tengas.
+        <div class="what-grid">
+            <div class="what-card">
+                <div class="what-icon">📈</div>
+                <h3 class="what-title">Competitive Returns</h3>
+                <p class="what-description">
+                    Earn significantly more than traditional bank savings accounts or CDs without taking on stock market risk. Your growth potential is tied to market indexes without the downside.
                 </p>
             </div>
 
-            <div class="process-card">
-                <div class="process-number">2</div>
-                <div class="process-icon">⏱️</div>
-                <h3 class="process-title">Proceso Rápido y Sencillo</h3>
-                <p class="process-description">
-                    Llamada de 10 a 15 minutos. Sin exámenes médicos. Sin formularios largos. Solo algunas preguntas, y
-                    te ayudaremos a encontrar la cobertura adecuada al mejor precio.
+            <div class="what-card">
+                <div class="what-icon">🛡️</div>
+                <h3 class="what-title">Principal Protection</h3>
+                <p class="what-description">
+                    Your principal is protected by A-rated financial institutions regulated at both state and federal levels. Your money is safe, guaranteed.
                 </p>
             </div>
 
-            <div class="process-card">
-                <div class="process-number">3</div>
-                <div class="process-icon">🤝</div>
-                <h3 class="process-title">Te Acompañamos en Cada Paso</h3>
-                <p class="process-description">
-                    Estamos aquí para hacer todo fácil. Ya sea que solo estés explorando o listo para protegerte, te
-                    guiaremos en todo el proceso.
+            <div class="what-card">
+                <div class="what-icon">💼</div>
+                <h3 class="what-title">Tax Advantages</h3>
+                <p class="what-description">
+                    Enjoy tax-deferred growth that lets your money compound faster. You control when you pay taxes, giving you more flexibility in retirement planning.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services-section">
+    <!-- Who Is It For -->
+    <section class="section audience-section">
         <div class="section-header">
-            <span class="section-label">Servicios Populares</span>
-            <h2 class="section-title">¿Sobre qué nos contacta la mayoría de las personas?</h2>
+            <span class="section-label">Is It Right For You?</span>
+            <h2 class="section-title">Who Benefits Most?</h2>
             <p class="section-description">
-                ¡Buena pregunta! La mayoría de las personas que nos contactan están buscando lo siguiente:
+                The High-Yield Savings Plan is designed for people at different stages of their financial journey.
             </p>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">💰</span>
-                <div class="service-content">
-                    <h3>Mejores Tarifas</h3>
-                    <p>Mejores tarifas para su póliza actual de seguro de vida</p>
-                </div>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">🏦</div>
+                <h3 class="audience-title">Cash-Cushion Builder</h3>
+                <p class="audience-range">$50K - $100K in savings</p>
+                <p class="audience-description">
+                    You want your emergency fund and savings to beat inflation without risking your principal. Get stable, predictable growth with zero market risk.
+                </p>
             </div>
 
-            <div class="service-card">
-                <span class="service-icon">🆕</span>
-                <div class="service-content">
-                    <h3>Nueva Cobertura</h3>
-                    <p>Nueva cobertura porque nunca han tenido una póliza</p>
-                </div>
+            <div class="audience-card">
+                <div class="audience-icon">📊</div>
+                <h3 class="audience-title">Tax-Smart Planner</h3>
+                <p class="audience-range">$100K - $500K in savings</p>
+                <p class="audience-description">
+                    You're looking for rate stability and tax control. Defer taxes while your money grows, then withdraw strategically in retirement for maximum efficiency.
+                </p>
             </div>
 
-            <div class="service-card">
-                <span class="service-icon">➕</span>
-                <div class="service-content">
-                    <h3>Agregar Cobertura</h3>
-                    <p>Agregar cobertura a lo que ya tienen</p>
-                </div>
+            <div class="audience-card">
+                <div class="audience-icon">👨‍👩‍👧‍👦</div>
+                <h3 class="audience-title">Legacy Protector</h3>
+                <p class="audience-range">$500K+ in savings</p>
+                <p class="audience-description">
+                    You want maximum growth with tax deferral while avoiding probate. Leave a tax-efficient legacy for your loved ones with built-in wealth transfer benefits.
+                </p>
             </div>
-
-            <div class="service-card">
-                <span class="service-icon">🔄</span>
-                <div class="service-content">
-                    <h3>Reemplazar Póliza</h3>
-                    <p>Reemplazar una póliza de trabajo con algo permanente y portátil</p>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">✅</span>
-                <div class="service-content">
-                    <h3>Sin Exámenes Médicos</h3>
-                    <p>Obtener cobertura sin exámenes médicos ni trámites complicados</p>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">👨‍👩‍👧‍👦</span>
-                <div class="service-content">
-                    <h3>Protección Familiar</h3>
-                    <p>Asegurarse de que su familia esté protegida con pagos mensuales accesibles</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-header" style="margin-top: 48px; margin-bottom: 0;">
-            <p class="section-description">
-                <strong>Sea cual sea tu situación, estamos aquí para ayudarte a encontrar la mejor opción.</strong>
-            </p>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="cta-content">
-            <div class="cta-emoji">👋</div>
-            <h2 class="cta-title">¡Hablamos pronto!</h2>
-            <p class="cta-subtitle">
-                Nuestro equipo está listo para ayudarte a proteger lo que más importa.
+    <!-- Key Features -->
+    <section class="section features-section">
+        <div class="section-header">
+            <span class="section-label">Key Benefits</span>
+            <h2 class="section-title">Why Clients Love It</h2>
+            <p class="section-description">
+                Features designed with your financial security and flexibility in mind.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💵</div>
+                <h3 class="feature-title">No Hidden Fees</h3>
+                <p class="feature-description">
+                    No setup fees, annual fees, or hidden charges. What you see is what you get—more money stays in your account working for you.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3 class="feature-title">Liquidity Access</h3>
+                <p class="feature-description">
+                    Access up to 10% of your account value annually with no penalties. Your money remains accessible when you need it most.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Guaranteed Principal</h3>
+                <p class="feature-description">
+                    Your principal is backed by A-rated institutions with billions in reserves. Sleep soundly knowing your money is protected.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Tax-Deferred Growth</h3>
+                <p class="feature-description">
+                    Your earnings grow tax-deferred, allowing compound growth without annual tax drag. Pay taxes only when you choose to withdraw.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="section-header">
+            <span class="section-label">Success Stories</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-description">
+                Real people who have transformed their savings strategy with the High-Yield Savings Plan.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "I was earning almost nothing in my savings account. Now I'm seeing real growth without worrying about the stock market. It's exactly what I was looking for."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">M</div>
+                    <div class="testimonial-info">
+                        <h4>Michael R.</h4>
+                        <p>Retired Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "The tax benefits alone have saved me thousands. I wish I had learned about this strategy years ago. My advisor made everything so easy to understand."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-info">
+                        <h4>Sandra K.</h4>
+                        <p>Small Business Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "After moving my CD money into this plan, I'm finally seeing the growth I expected. The principal guarantee gives me peace of mind."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-info">
+                        <h4>Robert T.</h4>
+                        <p>Retired Engineer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "I was skeptical at first, but after doing my research, I realized this is exactly how the big institutions protect and grow money. Now I'm doing the same."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">L</div>
+                    <div class="testimonial-info">
+                        <h4>Linda M.</h4>
+                        <p>Healthcare Professional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Families Choose It -->
+    <section class="section why-section">
+        <div class="why-content">
+            <div class="why-icon">💡</div>
+            <h2 class="section-title">Why Families Choose It</h2>
+            <p class="why-text">
+                The High-Yield Savings Plan gives families peace of mind knowing their savings are protected, growing, and working efficiently for their future. It's the smart way to save.
             </p>
         </div>
     </section>
@@ -1039,12 +1235,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
-            <a href="privacypolicy.html">Política de Privacidad</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
             <span class="footer-divider">|</span>
-            <a href="termsconditions.html">Términos y Condiciones</a>
+            <a href="termsconditions.html">Terms and Conditions</a>
         </div>
         <p class="footer-copy">
-            © 2024 SmartFin Family Solutions. Todos los derechos reservados.
+            © 2024 SmartFin Family Solutions. All rights reserved.
         </p>
     </footer>
 
