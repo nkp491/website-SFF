@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description"
+        content="Get instant life insurance from SmartFin Family Solutions. No medical exams or blood tests required.">
+    <title>SmartFin Family Solutions - Get Life Insurance</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1768295254027830');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1768295254027830&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #004C99;
+            --primary-light: #3399FF;
+            --secondary: #00B4A6;
+            --secondary-dark: #008577;
+            --accent: #6366F1;
+            --cta-orange: #FF6B35;
+            --cta-orange-dark: #E55A2B;
+            --dark: #0F172A;
+            --dark-lighter: #1E293B;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+
+            --gradient-primary: linear-gradient(135deg, #0066CC 0%, #00B4A6 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --gradient-cta: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%);
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(0, 102, 204, 0.3);
+            --shadow-cta: 0 8px 30px rgba(255, 107, 53, 0.4);
+
+            --container-max: 1200px;
+            --section-padding: 80px;
+
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+
+        .top-bar-brand img {
+            height: 28px;
+            width: auto;
+        }
+
+        .top-bar-brand .brand-x {
+            color: var(--gray-400);
+            font-weight: 400;
+            margin: 0 4px;
+        }
+
+        .top-bar-brand .brand-ethos {
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            font-size: 1.05rem;
+        }
+
+        .top-bar-cta {
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        .top-bar-cta:hover {
+            background: var(--gray-800);
+            transform: translateY(-1px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #e8f4f0 0%, #d4ede6 40%, #c0e6dc 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .hero-footnote {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            vertical-align: super;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gradient-cta);
+            color: var(--white);
+            padding: 18px 56px;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-cta);
+            transition: var(--transition-normal);
+            margin: 32px 0;
+        }
+
+        .hero-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Press logos */
+        .press-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            opacity: 0.5;
+        }
+
+        .press-logo {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--dark);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .press-logo.forbes {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .press-logo.fortune {
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+        }
+
+        .press-logo.bi {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+        }
+
+        .press-logo.yahoo {
+            font-size: 0.9rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Hero family image area */
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 180, 166, 0.12) 100%);
+            border-radius: 24px 24px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            overflow: hidden;
+        }
+
+        .hero-family-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px 24px 0 0;
+        }
+
+        /* ===== BENEFITS SECTION ===== */
+        .benefits-section {
+            background: var(--white);
+            padding: var(--section-padding) 24px;
+        }
+
+        .benefits-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .benefits-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .benefits-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .benefits-description {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .benefit-text {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ===== STEPS SECTION ===== */
+        .steps-section {
+            background: var(--gradient-hero);
+            padding: var(--section-padding) 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.15) 0%, transparent 60%);
+        }
+
+        .steps-content {
+            position: relative;
+            z-index: 10;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .steps-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .steps-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .steps-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .steps-description {
+            font-size: 1.15rem;
+            color: var(--gray-300);
+            line-height: 1.7;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-cta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 auto 20px;
+        }
+
+        .step-text {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta-section {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .final-cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-cta);
+            color: var(--white);
+            padding: 22px 56px;
+            border-radius: 16px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-cta);
+            transition: var(--transition-normal);
+        }
+
+        .final-cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            color: var(--gray-600);
+        }
+
+        .footer-copy {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .footer-disclaimer {
+            color: var(--gray-500);
+            font-size: 0.75rem;
+            margin-top: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* ===== FLOATING CTA BUTTON ===== */
+        .floating-cta-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 16px 28px;
+            background: var(--gradient-cta);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            z-index: 1000;
+            transition: var(--transition-normal);
+            animation: float-pulse 2s ease-in-out infinite;
+        }
+
+        .floating-cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.7);
+        }
+
+        @keyframes float-pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 10px 16px;
+            }
+
+            .top-bar-brand {
+                font-size: 0.8rem;
+            }
+
+            .top-bar-brand .brand-ethos {
+                font-size: 0.9rem;
+            }
+
+            .top-bar-cta {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 80px 20px 0;
+            }
+
+            .hero-cta {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
+
+            .press-logos {
+                gap: 20px;
+            }
+
+            .benefits-section,
+            .steps-section {
+                padding: 60px 20px;
+            }
+
+            .final-cta-btn {
+                padding: 18px 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-bar-brand span:first-child {
+                display: none;
+            }
+
+            .press-logos {
+                gap: 16px;
+            }
+
+            .press-logo {
+                font-size: 0.7rem;
+            }
+
+            .press-logo.forbes {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-brand">
+            <span>SmartFin Family Solutions</span>
+            <span class="brand-x">x</span>
+            <span class="brand-ethos">ETHOS</span>
+        </div>
+        <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="top-bar-cta">Check my price</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Get instant life insurance from <span class="highlight">SmartFin Family Solutions</span>
+            </h1>
+            <p class="hero-subtitle">No medical exams or blood tests.<sup class="hero-footnote">1</sup></p>
+
+            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="hero-cta">Get my rates</a>
+
+            <div class="press-logos">
+                <span class="press-logo bi">BUSINESS<br>INSIDER</span>
+                <span class="press-logo forbes">Forbes</span>
+                <span class="press-logo fortune">FORTUNE</span>
+                <span class="press-logo yahoo">yahoo!<br><small>finance</small></span>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-image-placeholder">
+                👨‍👩‍👦
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-header">
+            <span class="benefits-label">Why Ethos</span>
+            <h2 class="benefits-title">Life Insurance Made Simple</h2>
+            <p class="benefits-description">
+                Get the coverage your family deserves — quickly, easily, and affordably.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Instant Decisions</h3>
+                <p class="benefit-text">Apply online in minutes and get an instant coverage decision.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🩺</div>
+                <h3>No Medical Exams</h3>
+                <p class="benefit-text">No doctor visits, blood draws, or lengthy health screenings required.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Affordable Coverage</h3>
+                <p class="benefit-text">Policies starting at just a few dollars a month for the protection you need.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Trusted Carriers</h3>
+                <p class="benefit-text">Coverage backed by top-rated insurance carriers you can count on.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="steps-section">
+        <div class="steps-content">
+            <div class="steps-header">
+                <span class="steps-label">Simple Process</span>
+                <h2 class="steps-title">How It Works</h2>
+                <p class="steps-description">Get covered in 3 easy steps.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <p class="step-text">Click "Get my rates" and answer a few quick questions</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <p class="step-text">Compare personalized quotes from top carriers</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <p class="step-text">Choose your plan and get covered — no exams needed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+        <div class="final-cta-content">
+            <div class="final-cta-icon">🛡️</div>
+            <h2 class="final-cta-title">Protect Your Family Today</h2>
+            <p class="final-cta-subtitle">
+                It only takes a few minutes to see your personalized rates. No commitment required.
+            </p>
+            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="final-cta-btn">
+                Get my rates →
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating CTA Button -->
+    <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="floating-cta-btn">
+        🛡️ Get my rates
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <span class="footer-divider">|</span>
+            <a href="termsconditions.html">Terms and Conditions</a>
+        </div>
+        <p class="footer-copy">
+            &copy; 2024 SmartFin Family Solutions. All rights reserved.
+        </p>
+        <p class="footer-disclaimer">
+            <sup>1</sup> Most applicants do not require a medical exam. Eligibility and requirements may vary based on coverage amount and health history.
+        </p>
+    </footer>
+
+    <!-- Meta Pixel Click Tracking with CAPI -->
+    <script>
+        (function() {
+            function generateEventId() {
+                return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            function getCookie(name) {
+                var value = '; ' + document.cookie;
+                var parts = value.split('; ' + name + '=');
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+
+            function sendToCapiEndpoint(eventName, eventId, customData) {
+                fetch('/api/track', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event_name: eventName,
+                        event_id: eventId,
+                        event_source_url: window.location.href,
+                        action_source: 'website',
+                        custom_data: customData,
+                        user_data: {
+                            fbc: getCookie('_fbc'),
+                            fbp: getCookie('_fbp')
+                        }
+                    })
+                }).catch(function(err) { console.log('CAPI tracking error:', err); });
+            }
+
+            // Track all Ethos affiliate link clicks
+            document.querySelectorAll('a[href*="ethoslife.com"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var eventId = generateEventId();
+
+                    fbq('track', 'Lead', {
+                        content_name: 'Ethos Affiliate Click',
+                        content_category: 'Lead'
+                    }, { eventID: eventId });
+
+                    sendToCapiEndpoint('Lead', eventId, {
+                        content_name: 'Ethos Affiliate Click',
+                        content_category: 'Lead'
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
