@@ -29,7 +29,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
         /* ===== CSS RESET & BASE ===== */
@@ -42,18 +42,14 @@
         }
 
         :root {
-            --primary: #0066CC;
-            --primary-dark: #004C99;
-            --primary-light: #3399FF;
-            --secondary: #00B4A6;
-            --secondary-dark: #008577;
-            --accent: #6366F1;
-            --cta-orange: #FF6B35;
-            --cta-orange-dark: #E55A2B;
-            --dark: #0F172A;
-            --dark-lighter: #1E293B;
+            --teal: #1A4942;
+            --teal-light: #2A6B5F;
+            --teal-bg: #e8f4f0;
+            --teal-bg-dark: #d4ede6;
+            --orange-cta: #E8713A;
+            --orange-cta-dark: #D4622E;
+            --dark: #1A1A1A;
             --gray-900: #111827;
-            --gray-800: #1F2937;
             --gray-700: #374151;
             --gray-600: #4B5563;
             --gray-500: #6B7280;
@@ -64,25 +60,9 @@
             --gray-50: #F9FAFB;
             --white: #FFFFFF;
 
-            --gradient-primary: linear-gradient(135deg, #0066CC 0%, #00B4A6 100%);
-            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            --gradient-cta: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-            --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #0F172A 100%);
-
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-glow: 0 0 40px rgba(0, 102, 204, 0.3);
-            --shadow-cta: 0 8px 30px rgba(255, 107, 53, 0.4);
-
             --container-max: 1200px;
-            --section-padding: 80px;
-
             --transition-fast: 0.15s ease;
             --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
         }
 
         html {
@@ -105,11 +85,8 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
+            padding: 16px 48px;
+            background: var(--white);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -118,121 +95,112 @@
         .top-bar-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 700;
+            gap: 12px;
+            font-weight: 600;
             font-size: 0.95rem;
             color: var(--dark);
-        }
-
-        .top-bar-brand img {
-            height: 28px;
-            width: auto;
         }
 
         .top-bar-brand .brand-x {
             color: var(--gray-400);
             font-weight: 400;
-            margin: 0 4px;
+            font-size: 0.85rem;
         }
 
         .top-bar-brand .brand-ethos {
             font-weight: 800;
-            letter-spacing: 0.15em;
-            font-size: 1.05rem;
+            letter-spacing: 0.18em;
+            font-size: 1.15rem;
         }
 
         .top-bar-cta {
             background: var(--dark);
             color: var(--white);
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition-normal);
         }
 
         .top-bar-cta:hover {
-            background: var(--gray-800);
-            transform: translateY(-1px);
+            background: #333;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(180deg, #e8f4f0 0%, #d4ede6 40%, #c0e6dc 100%);
+            background: var(--teal-bg);
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 24px 0;
+            align-items: stretch;
             position: relative;
             overflow: hidden;
+            padding-top: 72px;
         }
 
-        .hero-content {
-            max-width: 700px;
-            margin: 0 auto;
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0 80px 48px;
+            max-width: 55%;
             position: relative;
             z-index: 10;
         }
 
         .hero-title {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+            font-weight: 400;
             color: var(--dark);
             line-height: 1.15;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .hero-title .highlight {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--teal);
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--gray-600);
-            margin-bottom: 8px;
+            margin-bottom: 36px;
         }
 
         .hero-footnote {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--gray-500);
             vertical-align: super;
         }
 
         .hero-cta {
             display: inline-block;
-            background: var(--gradient-cta);
+            background: var(--orange-cta);
             color: var(--white);
-            padding: 18px 56px;
-            border-radius: 12px;
-            font-size: 1.25rem;
-            font-weight: 700;
+            padding: 20px 48px;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
             text-decoration: none;
-            box-shadow: var(--shadow-cta);
             transition: var(--transition-normal);
-            margin: 32px 0;
+            margin-bottom: 48px;
+            width: fit-content;
         }
 
         .hero-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+            background: var(--orange-cta-dark);
+            transform: translateY(-2px);
         }
 
         /* Press logos */
         .press-logos {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 40px;
+            gap: 36px;
             flex-wrap: wrap;
-            opacity: 0.5;
+            opacity: 0.45;
         }
 
         .press-logo {
@@ -245,12 +213,12 @@
 
         .press-logo.forbes {
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-style: italic;
         }
 
         .press-logo.fortune {
-            font-size: 1rem;
+            font-size: 1.05rem;
             letter-spacing: 0.12em;
         }
 
@@ -265,105 +233,83 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        /* Hero family image area */
+        /* Hero image */
         .hero-image {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
+            flex: 1;
             position: relative;
-        }
-
-        .hero-image-placeholder {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 180, 166, 0.12) 100%);
-            border-radius: 24px 24px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
+            min-height: 500px;
             overflow: hidden;
         }
 
         .hero-family-img {
+            position: absolute;
+            top: 0;
+            right: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 24px 24px 0 0;
+            object-position: center top;
         }
 
         /* ===== BENEFITS SECTION ===== */
         .benefits-section {
             background: var(--white);
-            padding: var(--section-padding) 24px;
+            padding: 100px 48px;
         }
 
         .benefits-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 48px;
+            max-width: 800px;
+            margin: 0 auto 56px;
         }
 
-        .benefits-label {
-            display: inline-block;
-            font-size: 0.85rem;
+        .benefits-tagline {
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--teal);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
         }
 
         .benefits-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 700;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 400;
             color: var(--dark);
             line-height: 1.2;
             margin-bottom: 16px;
         }
 
         .benefits-description {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--gray-600);
             line-height: 1.7;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
             max-width: var(--container-max);
             margin: 0 auto;
         }
 
         .benefit-card {
-            background: linear-gradient(145deg, var(--gray-50) 0%, var(--white) 100%);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 32px;
             text-align: center;
-            transition: var(--transition-normal);
-        }
-
-        .benefit-card:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
+            padding: 24px;
         }
 
         .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2.5rem;
-            margin-bottom: 16px;
         }
 
-        .benefit-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
-
-        .benefit-text {
+        .benefit-card p {
             font-size: 1rem;
             color: var(--gray-600);
             line-height: 1.6;
@@ -371,27 +317,11 @@
 
         /* ===== STEPS SECTION ===== */
         .steps-section {
-            background: var(--gradient-hero);
-            padding: var(--section-padding) 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .steps-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(0, 180, 166, 0.15) 0%, transparent 60%);
+            background: var(--teal);
+            padding: 100px 48px;
         }
 
         .steps-content {
-            position: relative;
-            z-index: 10;
             max-width: var(--container-max);
             margin: 0 auto;
         }
@@ -399,78 +329,58 @@
         .steps-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 48px;
-        }
-
-        .steps-label {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
+            margin: 0 auto 56px;
         }
 
         .steps-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 700;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 400;
             color: var(--white);
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .steps-description {
-            font-size: 1.15rem;
-            color: var(--gray-300);
-            line-height: 1.7;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
         }
 
         .step-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 32px;
             text-align: center;
-            transition: var(--transition-normal);
-        }
-
-        .step-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
+            padding: 32px;
         }
 
         .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient-cta);
+            width: 56px;
+            height: 56px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--white);
             margin: 0 auto 20px;
         }
 
         .step-text {
-            font-size: 1.1rem;
-            color: var(--white);
-            font-weight: 500;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
         }
 
         /* ===== FINAL CTA SECTION ===== */
         .final-cta-section {
             background: var(--white);
-            padding: 100px 24px;
+            padding: 100px 48px;
         }
 
         .final-cta-content {
@@ -479,20 +389,16 @@
             text-align: center;
         }
 
-        .final-cta-icon {
-            font-size: 4rem;
-            margin-bottom: 24px;
-        }
-
         .final-cta-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
             color: var(--dark);
             margin-bottom: 16px;
         }
 
         .final-cta-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--gray-600);
             margin-bottom: 40px;
         }
@@ -501,26 +407,31 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: var(--gradient-cta);
+            background: var(--teal);
             color: var(--white);
-            padding: 22px 56px;
-            border-radius: 16px;
-            font-size: 1.4rem;
-            font-weight: 700;
+            padding: 20px 48px;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
             text-decoration: none;
-            box-shadow: var(--shadow-cta);
             transition: var(--transition-normal);
         }
 
         .final-cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        .final-cta-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             background: var(--dark);
-            padding: 48px 24px;
+            padding: 48px 48px;
             text-align: center;
         }
 
@@ -568,78 +479,85 @@
             bottom: 24px;
             right: 24px;
             padding: 16px 28px;
-            background: var(--gradient-cta);
+            background: var(--teal);
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--white);
             text-decoration: none;
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 8px 30px rgba(26, 73, 66, 0.4);
             z-index: 1000;
             transition: var(--transition-normal);
-            animation: float-pulse 2s ease-in-out infinite;
         }
 
         .floating-cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.7);
-        }
-
-        @keyframes float-pulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
-            }
+            background: var(--teal-light);
+            box-shadow: 0 12px 40px rgba(26, 73, 66, 0.5);
+            transform: translateY(-2px);
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .top-bar {
-                padding: 10px 16px;
-            }
-
-            .top-bar-brand {
-                font-size: 0.8rem;
-            }
-
-            .top-bar-brand .brand-ethos {
-                font-size: 0.9rem;
-            }
-
-            .top-bar-cta {
-                padding: 8px 16px;
-                font-size: 0.8rem;
-            }
-
+        @media (max-width: 960px) {
             .hero {
-                padding: 80px 20px 0;
+                flex-direction: column;
             }
 
-            .hero-cta {
-                padding: 16px 40px;
-                font-size: 1.1rem;
+            .hero-text {
+                max-width: 100%;
+                padding: 100px 32px 40px;
+                text-align: center;
+                align-items: center;
             }
 
             .press-logos {
-                gap: 20px;
+                justify-content: center;
+            }
+
+            .hero-image {
+                min-height: 400px;
+                width: 100%;
+            }
+
+            .benefits-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 12px 20px;
+            }
+
+            .top-bar-cta {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .hero-text {
+                padding: 90px 20px 32px;
+            }
+
+            .hero-cta {
+                padding: 16px 36px;
+                font-size: 1rem;
             }
 
             .benefits-section,
-            .steps-section {
+            .steps-section,
+            .final-cta-section {
                 padding: 60px 20px;
             }
 
             .final-cta-btn {
-                padding: 18px 40px;
-                font-size: 1.2rem;
+                padding: 16px 36px;
+                font-size: 1rem;
             }
         }
 
@@ -649,7 +567,7 @@
             }
 
             .press-logos {
-                gap: 16px;
+                gap: 20px;
             }
 
             .press-logo {
@@ -658,6 +576,10 @@
 
             .press-logo.forbes {
                 font-size: 1rem;
+            }
+
+            .hero-image {
+                min-height: 300px;
             }
         }
     </style>
@@ -671,18 +593,18 @@
             <span class="brand-x">x</span>
             <span class="brand-ethos">ETHOS</span>
         </div>
-        <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="top-bar-cta">Check my price</a>
+        <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" rel="noopener noreferrer" class="top-bar-cta">Check my price</a>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-text">
             <h1 class="hero-title">
                 Get instant life insurance from <span class="highlight">SmartFin Family Solutions</span>
             </h1>
             <p class="hero-subtitle">No medical exams or blood tests.<sup class="hero-footnote">1</sup></p>
 
-            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="hero-cta">Get my rates</a>
+            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" rel="noopener noreferrer" class="hero-cta">Get my rates</a>
 
             <div class="press-logos">
                 <span class="press-logo bi">BUSINESS<br>INSIDER</span>
@@ -693,42 +615,44 @@
         </div>
 
         <div class="hero-image">
-            <div class="hero-image-placeholder">
-                👨‍👩‍👦
-            </div>
+            <img src="images/hero-family.jpg" alt="Happy family smiling together" class="hero-family-img" loading="eager">
         </div>
     </section>
 
     <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="benefits-header">
-            <span class="benefits-label">Why Ethos</span>
-            <h2 class="benefits-title">Life Insurance Made Simple</h2>
+            <p class="benefits-tagline">Why Ethos</p>
+            <h2 class="benefits-title">Life insurance that's actually easy</h2>
             <p class="benefits-description">
-                Get the coverage your family deserves — quickly, easily, and affordably.
+                Our modern, 100% online experience makes applying super fast and stress-free.
             </p>
         </div>
 
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="benefit-icon">⚡</div>
-                <h3>Instant Decisions</h3>
-                <p class="benefit-text">Apply online in minutes and get an instant coverage decision.</p>
+                <div class="benefit-icon">&#x1F4CB;</div>
+                <p>Coverage up to $2M with no medical exam. Just answer a few simple health questions.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">🩺</div>
-                <h3>No Medical Exams</h3>
-                <p class="benefit-text">No doctor visits, blood draws, or lengthy health screenings required.</p>
+                <div class="benefit-icon">&#x1F3E0;</div>
+                <p>Free wills & estate plans. Eligibility depends on the product and state.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <h3>Affordable Coverage</h3>
-                <p class="benefit-text">Policies starting at just a few dollars a month for the protection you need.</p>
+                <div class="benefit-icon">&#x2705;</div>
+                <p>We can offer coverage to more than 90% of applicants age 20-85, averaged across ages.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">🛡️</div>
-                <h3>Trusted Carriers</h3>
-                <p class="benefit-text">Coverage backed by top-rated insurance carriers you can count on.</p>
+                <div class="benefit-icon">&#x1F4BB;</div>
+                <p>Apply from the comfort of your home, 100% online. No paperwork or agent visits.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">&#x2699;&#xFE0F;</div>
+                <p>Manage your policy online anytime. Update beneficiaries, view documents, and more.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">&#x1F4B0;</div>
+                <p>Affordable coverage starting at just a few dollars per month for the protection you need.</p>
             </div>
         </div>
     </section>
@@ -737,7 +661,6 @@
     <section class="steps-section">
         <div class="steps-content">
             <div class="steps-header">
-                <span class="steps-label">Simple Process</span>
                 <h2 class="steps-title">How It Works</h2>
                 <p class="steps-description">Get covered in 3 easy steps.</p>
             </div>
@@ -745,15 +668,15 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <p class="step-text">Click "Get my rates" and answer a few quick questions</p>
+                    <p class="step-text">Click "Get my rates" and answer a few quick questions about yourself</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <p class="step-text">Compare personalized quotes from top carriers</p>
+                    <p class="step-text">Compare personalized quotes from top-rated carriers</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <p class="step-text">Choose your plan and get covered — no exams needed</p>
+                    <p class="step-text">Choose your plan and get covered instantly &mdash; no exams needed</p>
                 </div>
             </div>
         </div>
@@ -762,20 +685,20 @@
     <!-- Final CTA -->
     <section class="final-cta-section">
         <div class="final-cta-content">
-            <div class="final-cta-icon">🛡️</div>
             <h2 class="final-cta-title">Protect Your Family Today</h2>
             <p class="final-cta-subtitle">
                 It only takes a few minutes to see your personalized rates. No commitment required.
             </p>
-            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="final-cta-btn">
-                Get my rates →
+            <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" rel="noopener noreferrer" class="final-cta-btn">
+                Get my rates
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h12m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
         </div>
     </section>
 
     <!-- Floating CTA Button -->
-    <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" class="floating-cta-btn">
-        🛡️ Get my rates
+    <a href="https://app.ethoslife.com/partner/1f81a/q/goals" target="_blank" rel="noopener noreferrer" class="floating-cta-btn">
+        Check my price
     </a>
 
     <!-- Footer -->
