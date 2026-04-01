@@ -594,6 +594,142 @@
                 padding: 16px;
             }
         }
+
+        /* Lead Capture Modal */
+        .lead-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .lead-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lead-modal {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 36px;
+            max-width: 440px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.25s ease;
+        }
+
+        .lead-modal-overlay.active .lead-modal {
+            transform: translateY(0);
+        }
+
+        .lead-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-400);
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+        }
+
+        .lead-modal-close:hover {
+            color: var(--gray-700);
+        }
+
+        .lead-modal h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--teal);
+            margin: 0 0 8px 0;
+        }
+
+        .lead-modal p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin: 0 0 24px 0;
+            line-height: 1.5;
+        }
+
+        .lead-modal label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+        }
+
+        .lead-modal input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+
+        .lead-modal input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(26, 73, 66, 0.1);
+        }
+
+        .lead-modal input.input-error {
+            border-color: #e53e3e;
+        }
+
+        .lead-modal .field-error {
+            color: #e53e3e;
+            font-size: 0.8rem;
+            margin: -12px 0 16px 0;
+            display: none;
+        }
+
+        .lead-modal-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .lead-modal-btn:hover {
+            background: var(--teal-light);
+        }
+
+        @media (max-width: 480px) {
+            .lead-modal {
+                padding: 28px 20px;
+                width: 95%;
+            }
+
+            .lead-modal h3 {
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 
@@ -711,6 +847,30 @@
         Check my price
     </a>
 
+    <!-- Lead Capture Modal -->
+    <div class="lead-modal-overlay" id="leadModal">
+        <div class="lead-modal">
+            <button class="lead-modal-close" id="leadModalClose" aria-label="Close">&times;</button>
+            <h3>Before you go</h3>
+            <p>Enter your info below so we can follow up with your personalized quote.</p>
+            <form id="leadForm" novalidate>
+                <label for="leadFirstName">First Name</label>
+                <input type="text" id="leadFirstName" name="firstName" placeholder="John" required>
+                <div class="field-error" id="firstNameError">Please enter your first name</div>
+
+                <label for="leadLastName">Last Name</label>
+                <input type="text" id="leadLastName" name="lastName" placeholder="Smith" required>
+                <div class="field-error" id="lastNameError">Please enter your last name</div>
+
+                <label for="leadPhone">Phone Number</label>
+                <input type="tel" id="leadPhone" name="phone" placeholder="(555) 123-4567" required>
+                <div class="field-error" id="phoneError">Please enter a valid 10-digit phone number</div>
+
+                <button type="submit" class="lead-modal-btn">Continue to My Rates</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
@@ -726,7 +886,7 @@
         </p>
     </footer>
 
-    <!-- Meta Pixel Click Tracking with CAPI -->
+    <!-- Meta Pixel Click Tracking with CAPI + Lead Capture -->
     <script>
         (function() {
             function generateEventId() {
@@ -740,39 +900,144 @@
                 return null;
             }
 
-            function sendToCapiEndpoint(eventName, eventId, customData) {
+            function sendToCapiEndpoint(eventName, eventId, customData, userData) {
+                var payload = {
+                    event_name: eventName,
+                    event_id: eventId,
+                    event_source_url: window.location.href,
+                    action_source: 'website',
+                    custom_data: customData,
+                    user_data: {
+                        fbc: getCookie('_fbc'),
+                        fbp: getCookie('_fbp')
+                    }
+                };
+                if (userData) {
+                    if (userData.first_name) payload.user_data.first_name = userData.first_name;
+                    if (userData.last_name) payload.user_data.last_name = userData.last_name;
+                    if (userData.phone) payload.user_data.phone = userData.phone;
+                }
                 fetch('/api/track', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        event_name: eventName,
-                        event_id: eventId,
-                        event_source_url: window.location.href,
-                        action_source: 'website',
-                        custom_data: customData,
-                        user_data: {
-                            fbc: getCookie('_fbc'),
-                            fbp: getCookie('_fbp')
-                        }
-                    })
+                    body: JSON.stringify(payload)
                 }).catch(function(err) { console.log('CAPI tracking error:', err); });
             }
 
-            // Track all Ethos affiliate link clicks
+            // Lead capture modal logic
+            var modal = document.getElementById('leadModal');
+            var form = document.getElementById('leadForm');
+            var closeBtn = document.getElementById('leadModalClose');
+            var pendingUrl = null;
+
+            function showModal(url) {
+                pendingUrl = url;
+                modal.classList.add('active');
+                document.getElementById('leadFirstName').focus();
+            }
+
+            function hideModal() {
+                modal.classList.remove('active');
+                pendingUrl = null;
+                form.reset();
+                // Clear error states
+                form.querySelectorAll('.input-error').forEach(function(el) { el.classList.remove('input-error'); });
+                form.querySelectorAll('.field-error').forEach(function(el) { el.style.display = 'none'; });
+            }
+
+            function isLeadCaptured() {
+                return sessionStorage.getItem('ethosLeadCaptured') === 'true';
+            }
+
+            function trackAndRedirect(url, userData) {
+                var eventId = generateEventId();
+                fbq('track', 'Lead', {
+                    content_name: 'Ethos Affiliate Click',
+                    content_category: 'Lead'
+                }, { eventID: eventId });
+
+                sendToCapiEndpoint('Lead', eventId, {
+                    content_name: 'Ethos Affiliate Click',
+                    content_category: 'Lead'
+                }, userData);
+
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }
+
+            // Intercept all Ethos affiliate link clicks
             document.querySelectorAll('a[href*="ethoslife.com"]').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    var eventId = generateEventId();
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var url = link.href;
 
-                    fbq('track', 'Lead', {
-                        content_name: 'Ethos Affiliate Click',
-                        content_category: 'Lead'
-                    }, { eventID: eventId });
+                    if (isLeadCaptured()) {
+                        trackAndRedirect(url, null);
+                        return;
+                    }
 
-                    sendToCapiEndpoint('Lead', eventId, {
-                        content_name: 'Ethos Affiliate Click',
-                        content_category: 'Lead'
-                    });
+                    showModal(url);
                 });
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', hideModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) hideModal();
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var firstName = document.getElementById('leadFirstName').value.trim();
+                var lastName = document.getElementById('leadLastName').value.trim();
+                var phone = document.getElementById('leadPhone').value.trim();
+                var phoneDigits = phone.replace(/\D/g, '');
+                var valid = true;
+
+                // Validate first name
+                if (!firstName) {
+                    document.getElementById('leadFirstName').classList.add('input-error');
+                    document.getElementById('firstNameError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.getElementById('leadFirstName').classList.remove('input-error');
+                    document.getElementById('firstNameError').style.display = 'none';
+                }
+
+                // Validate last name
+                if (!lastName) {
+                    document.getElementById('leadLastName').classList.add('input-error');
+                    document.getElementById('lastNameError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.getElementById('leadLastName').classList.remove('input-error');
+                    document.getElementById('lastNameError').style.display = 'none';
+                }
+
+                // Validate phone (10 digits)
+                if (phoneDigits.length !== 10) {
+                    document.getElementById('leadPhone').classList.add('input-error');
+                    document.getElementById('phoneError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.getElementById('leadPhone').classList.remove('input-error');
+                    document.getElementById('phoneError').style.display = 'none';
+                }
+
+                if (!valid) return;
+
+                // Mark lead as captured for this session
+                sessionStorage.setItem('ethosLeadCaptured', 'true');
+
+                // Track and redirect
+                trackAndRedirect(pendingUrl, {
+                    first_name: firstName,
+                    last_name: lastName,
+                    phone: phoneDigits
+                });
+
+                hideModal();
             });
         })();
     </script>
