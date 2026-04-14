@@ -720,6 +720,24 @@
             background: var(--teal-light);
         }
 
+        .lead-modal-disclosure {
+            margin-top: 12px;
+            margin-bottom: 0;
+            font-size: 7px;
+            line-height: 1.4;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        .lead-modal-disclosure a {
+            color: #6b7280;
+            text-decoration: underline;
+        }
+
+        .lead-modal-disclosure a:hover {
+            color: var(--teal);
+        }
+
         @media (max-width: 480px) {
             .lead-modal {
                 padding: 28px 20px;
@@ -867,6 +885,14 @@
                 <div class="field-error" id="phoneError">Please enter a valid 10-digit phone number</div>
 
                 <button type="submit" class="lead-modal-btn">Continue to My Rates</button>
+                <p class="lead-modal-disclosure">
+                    By clicking Continue, you agree to our
+                    <a href="termsconditions.html" target="_blank" rel="noopener">Terms</a>
+                    and
+                    <a href="privacypolicy.html" target="_blank" rel="noopener">Privacy Policy</a>,
+                    and consent to be contacted by SmartFin Family Solutions at the number provided,
+                    including by autodialed calls or text messages. Consent is not a condition of purchase. Message and data rates may apply.
+                </p>
             </form>
         </div>
     </div>
